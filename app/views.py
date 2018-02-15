@@ -32,7 +32,7 @@ def contact():
     form = MyForm()
     if form.validate_on_submit():
         name = form.name.data
-        email = request.form['email']
+        email = form.email.data
         subject = request.form['subject']
         message = request.form['message']
         msg = Message(subject, sender=(name,email), recipients=["b33bbee5ab-172b65@inbox.mailtrap.io"])
